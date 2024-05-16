@@ -6,7 +6,7 @@
     "permissions": ["tabs", "activeTab"],
     "content_scripts": [
       {
-        "matches": ["*://www.youtube.com/*","*://www.music.youtube.com/*"],
+        "matches": ["*://www.youtube.com/*","*://music.youtube.com/*"],
         "js": ["content.js"]
       }
     ]
