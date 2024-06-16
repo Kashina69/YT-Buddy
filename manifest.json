@@ -9,6 +9,16 @@
     "background",
     "storage"
   ],
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "content.js"
+      ]
+    }
+  ],
   "background": {
     "service_worker": "background.js"
   },
@@ -20,17 +30,6 @@
       "128": "icon.png"
     }
   },
-  "content_scripts": [
-    {
-      "matches": [
-        "*://www.youtube.com/*",
-        "*://music.youtube.com/*"
-      ],
-      "js": [
-        "content.js"
-      ]
-    }
-  ],
   "icons": {
     "16": "icon.png",
     "48": "icon.png",
