@@ -1,4 +1,3 @@
-
 window.addEventListener('load', () => {
     setInterval(() => {
       skipAd();
@@ -11,6 +10,18 @@ window.addEventListener('load', () => {
       skipButton.click();
     }
   }
+
+chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+  if (request.action === "pause") {
+    document.querySelectorAll('video').forEach((video) => {
+      video.pause();
+    });
+  } else if (request.action === "play") {
+    document.querySelectorAll('video').forEach((video) => {
+      video.play();
+    });
+  }
+});
 
 
 

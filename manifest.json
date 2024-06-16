@@ -1,14 +1,39 @@
 {
-    "manifest_version": 3,
-    "name": "YouTube Ad Skipper",
-    "description": "Automatically skips ads on YouTube videos.",
-    "version": "1.0",
-    "permissions": ["tabs", "activeTab"],
-    "content_scripts": [
-      {
-        "matches": ["*://www.youtube.com/*","*://music.youtube.com/*"],
-        "js": ["content.js"]
-      }
-    ]
+  "manifest_version": 3,
+  "name": "YT Buddy",
+  "description": "Automatically skips ads on YouTube and YT Music and pauses the video when tab is switched or another software is used.",
+  "version": "1.0",
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "background",
+    "storage"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon.png",
+      "48": "icon.png",
+      "128": "icon.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://www.youtube.com/*",
+        "*://music.youtube.com/*"
+      ],
+      "js": [
+        "content.js"
+      ]
+    }
+  ],
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
   }
-  
+}
